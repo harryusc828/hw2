@@ -24,7 +24,7 @@ std::set<std::string> parseStringToWords(string rawWords)
 
 
 
-        if( ((rawWords[i] <= 'Z' && rawWords[i] >= 'A') || (rawWords[i] >= 'a' && rawWords[i] <= 'z')) && (i != rawWords.size()-1) ){
+        if( 0 == ispunct(rawWords[i]) && (i != rawWords.size()-1) && (isspace(rawWords[i]) == 0) ){
             continue;
         }
         else if(i == rawWords.size()-1){
@@ -39,13 +39,14 @@ std::set<std::string> parseStringToWords(string rawWords)
             if ((idx_2 - idx_1) >= 2){
                 my_words.insert(convToLower(rawWords.substr(idx_1, idx_2 - idx_1)));
             }
+            //cout << "I am here at Line 42" << endl; 
             idx_1 = idx_2 + 1; 
         }
     }
     
-    for(set<string>::iterator it = my_words.begin(); it != my_words.end(); ++it){
-       cout <<"Line 35" << *it << endl; 
-   }
+    //for(set<string>::iterator it = my_words.begin(); it != my_words.end(); ++it){
+      // cout <<"Line 35" << *it << endl; 
+   //}
     //cout << "line 37 end" << endl; 
     return my_words; 
 }

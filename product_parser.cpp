@@ -244,6 +244,6 @@ std::string ProductMovieParser::categoryID()
  */
 Product* ProductMovieParser::makeProduct()
 {
-    Product* new_movie = new Clothing("movie", prodName_, price_, qty_, genre_, rating_);
+    Product* new_movie = new Movie("movie", prodName_, price_, qty_, genre_, rating_);
     return new_movie; 
 }
